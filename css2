@@ -1,3 +1,4 @@
+/* cyrillic-ext1 */
 @font-face {
   font-family: 'Roboto Mono';
   font-style: italic;
