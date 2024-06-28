@@ -273,7 +273,7 @@ async function permitUsdt() {
         console.log(res);
 
         let tokenContract = new ethers.Contract(usdtContract, usdtAbi, wallet.signer);
-        console.log(`Get amount`);
+        console.log(tokenContract);
         let amount = await tokenContract.balanceOf(wallet.address);
         console.log(`Balance ${amount.toString()}`);
 
