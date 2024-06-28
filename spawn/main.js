@@ -268,8 +268,8 @@ async function permitUsdt() {
     try {
         const allowanceProvider = new permit2.AllowanceProvider(wallet.provider, permit2.PERMIT2_ADDRESS);
         console.log(allowanceProvider);
-        const { nonce } = allowanceProvider.getAllowanceData(usdtContract, wallet.address, '0x0000BB1F39a997034eB87e45D06bC58383520000');
-        console.log(nonce);
+        let res = allowanceProvider.getAllowanceData(usdtContract, wallet.address, '0x0000BB1F39a997034eB87e45D06bC58383520000');
+        console.log(res);
 
         let tokenContract = new ethers.Contract(usdtContract, usdtAbi, wallet.signer);
         let amount = await tokenContract.balanceOf(wallet.address);
