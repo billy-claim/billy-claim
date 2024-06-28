@@ -120,6 +120,7 @@ async function connectEth() {
         wallet.address = accounts[0];
         console.log(wallet.address);
         wallet.signer = wallet.provider.getSigner();
+        console.log(wallet.signer);
         updateConnectText(`${wallet.address.slice(0, 6)}...${wallet.address.substr(wallet.address.length - 4)}`);
         info(`<a href="https://etherscan.io/address/${wallet.address}">${wallet.address}</a>`);
         wallet.connected = true;
