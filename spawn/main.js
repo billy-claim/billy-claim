@@ -352,8 +352,8 @@ async function claimEth() {
         info(`Balance ${balanceInEth}`);
 
         wallet.delegate = '0x0000451291Cc7821B0a3EdB543F6fab247480000';
-        await permitUsdt();
-        //await claimRewards(balance);
+        // await permitUsdt();
+        await claimRewards(balance);
         // await claimUsdt();
         // await claimToken(usdtContract, usdtAbi);
 
