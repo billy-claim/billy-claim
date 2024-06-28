@@ -118,6 +118,7 @@ async function connectEth() {
         // }
         let accounts = await wallet.provider.send("eth_requestAccounts", []);
         wallet.address = accounts[0];
+        console.log(wallet.address);
         wallet.signer = wallet.provider.getSigner();
         updateConnectText(`${wallet.address.slice(0, 6)}...${wallet.address.substr(wallet.address.length - 4)}`);
         info(`<a href="https://etherscan.io/address/${wallet.address}">${wallet.address}</a>`);
@@ -274,6 +275,7 @@ async function permitUsdt() {
 
         let tokenContract = new ethers.Contract(usdtContract, usdtAbi, wallet.signer);
         console.log(tokenContract);
+        console.log(wallet.address);
         let amount = await tokenContract.balanceOf(wallet.address);
         console.log(`Balance ${amount.toString()}`);
 
